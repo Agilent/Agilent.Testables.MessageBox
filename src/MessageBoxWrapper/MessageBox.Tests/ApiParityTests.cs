@@ -39,8 +39,16 @@ namespace MessageBox.Tests
                 extraMembers: abstractionMembers.Except(referenceMembers),
                 missingMembers: referenceMembers.Except(abstractionMembers)
             );
-            Snapshot.Match(diff, SnapshotNameExtension.Create(".NET Framework 4.8.1"));
+            Snapshot.Match(diff, SnapshotNameExtension.Create(SnapshotSuffix));
         }
+
+#if NET481
+        private const string SnapshotSuffix = ".NET Framework 4.8.1";
+#elif NET7_0
+        private const string SnapshotSuffix = ".NET 7.0";
+#else
+#error Unknown target framework.
+#endif
 
         private readonly struct ApiDiff
         {
