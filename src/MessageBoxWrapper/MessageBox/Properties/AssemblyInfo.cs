@@ -1,6 +1,6 @@
-﻿using System.Reflection;
-using System.Resources;
-using System.Runtime.CompilerServices;
+// (c) Copyright 2024 Agilent Technologies, Inc. All Rights Reserved.
+
+using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Windows;
 

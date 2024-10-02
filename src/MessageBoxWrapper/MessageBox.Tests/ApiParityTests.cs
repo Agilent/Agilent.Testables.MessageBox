@@ -1,5 +1,7 @@
-using System;
+// (c) Copyright 2024 Agilent Technologies, Inc. All Rights Reserved.
+
 using System.Collections.Generic;
+using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -42,8 +44,10 @@ namespace MessageBox.Tests
             Snapshot.Match(diff, SnapshotNameExtension.Create(SnapshotSuffix));
         }
 
+
 #if NET481
         private const string SnapshotSuffix = ".NET Framework 4.8.1";
+
 #elif NET7_0
         private const string SnapshotSuffix = ".NET 7.0";
 #else
