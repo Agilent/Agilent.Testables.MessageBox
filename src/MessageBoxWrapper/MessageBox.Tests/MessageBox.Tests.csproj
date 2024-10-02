@@ -1,12 +1,15 @@
 <Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
-        <TargetFrameworks>net481;net7.0-windows</TargetFrameworks>
+        <TargetFrameworks>net481;net8.0-windows</TargetFrameworks>
         <OutputType>Library</OutputType>
         <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+        <AssemblyName>Agilent.Ace.Testables.MessageBox.Tests</AssemblyName>
+        <RootNamespace>Agilent.Ace.Testables.MessageBox.Tests</RootNamespace>
+        <IsPackable>false</IsPackable>
     </PropertyGroup>
 
-    <PropertyGroup Condition=" '$(TargetFramework)' == 'net7.0-windows'">
-        <DefineConstants>NET7_0</DefineConstants>
+    <PropertyGroup Condition=" '$(TargetFramework)' == 'net8.0-windows'">
+        <DefineConstants>NET8_0</DefineConstants>
     </PropertyGroup>
 
     <PropertyGroup Condition=" '$(TargetFramework)' == 'net481'">
@@ -27,7 +30,7 @@
     <ItemGroup Condition=" '$(TargetFramework)' == 'net481'">
         <Reference Include="System.Windows.Forms" />
     </ItemGroup>
-    <ItemGroup Condition=" '$(TargetFramework)' == 'net7.0-windows'">
+    <ItemGroup Condition=" '$(TargetFramework)' == 'net8.0-windows'">
         <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.11.1" />
     </ItemGroup>
 

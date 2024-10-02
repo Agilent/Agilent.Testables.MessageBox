@@ -2,7 +2,7 @@
 
 using System.Windows.Forms;
 
-namespace Agilent.Ace.MessageBox.Abstractions
+namespace Agilent.Ace.Testables.MessageBox.Abstractions
 {
     /// <summary>
     /// Abstractions for <see cref="System.Windows.Forms.MessageBox"/>

@@ -1,9 +1,9 @@
 // (c) Copyright 2024 Agilent Technologies, Inc. All Rights Reserved.
 
 using System.Windows.Forms;
-using Agilent.Ace.MessageBox.Abstractions;
+using Agilent.Ace.Testables.MessageBox.Abstractions;
 
-namespace Agilent.Ace.MessageBox.Wrappers
+namespace Agilent.Ace.Testables.MessageBox.Wrappers
 {
     public class MessageBox : IMessageBox
     {

@@ -1,10 +1,9 @@
 <Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
-        <TargetFrameworks>net481;net7.0-windows</TargetFrameworks>
+        <TargetFrameworks>net481;net8.0-windows</TargetFrameworks>
         <OutputType>Library</OutputType>
-        <RootNamespace>Agilent.Ace.MessageBox</RootNamespace>
-        <AssemblyName>Agilent.Ace.MessageBox</AssemblyName>
-        <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+        <RootNamespace>Agilent.Ace.Testables.MessageBox</RootNamespace>
+        <AssemblyName>Agilent.Ace.Testables.MessageBox</AssemblyName>
         <UseWindowsForms>true</UseWindowsForms>
         <UseWPF>true</UseWPF>
         <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
@@ -13,6 +12,9 @@
     </PropertyGroup>
     <PropertyGroup Condition=" '$(TargetFramework)' == 'net481'">
         <DefineConstants>NET481;NETFULL</DefineConstants>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(TargetFramework)' == 'net8.0-windows'">
+        <DefineConstants>NET8_0</DefineConstants>
     </PropertyGroup>
     <ItemGroup>
         <PackageReference Include="Microsoft.CodeAnalysis.CSharp">

@@ -1,7 +1,7 @@
 // (c) Copyright 2024 Agilent Technologies, Inc. All Rights Reserved.
 
-using System.Collections.Generic;
 using System;
+using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -9,7 +9,7 @@ using Snapshooter;
 using Snapshooter.MSTest;
 using static System.Reflection.BindingFlags;
 
-namespace MessageBox.Tests
+namespace Agilent.Ace.Testables.MessageBox.Tests
 {
     [TestClass]
     [ExcludeFromCodeCoverage]
@@ -21,7 +21,7 @@ namespace MessageBox.Tests
         {
             AssertParity(
                 referenceType: typeof(System.Windows.Forms.MessageBox),
-                abstractionType: typeof(Agilent.Ace.MessageBox.Wrappers.MessageBox)
+                abstractionType: typeof(Agilent.Ace.Testables.MessageBox.Wrappers.MessageBox)
             );
         }
 
@@ -48,8 +48,8 @@ namespace MessageBox.Tests
 #if NET481
         private const string SnapshotSuffix = ".NET Framework 4.8.1";
 
-#elif NET7_0
-        private const string SnapshotSuffix = ".NET 7.0";
+#elif NET8_0
+        private const string SnapshotSuffix = ".NET 8.0";
 #else
 #error Unknown target framework.
 #endif
