@@ -20,7 +20,7 @@ namespace Agilent.Ace.Testables.MessageBox.Tests
         public void MessageBox()
         {
             AssertParity(
-                referenceType: typeof(System.Windows.Forms.MessageBox),
+                referenceType: typeof(System.Windows.MessageBox),
                 abstractionType: typeof(Agilent.Ace.Testables.MessageBox.Wrappers.MessageBox)
             );
         }
@@ -45,8 +45,8 @@ namespace Agilent.Ace.Testables.MessageBox.Tests
         }
 
 
-#if NET481
-        private const string SnapshotSuffix = ".NET Framework 4.8.1";
+#if NET48
+        private const string SnapshotSuffix = ".NET Framework 4.8";
 
 #elif NET8_0
         private const string SnapshotSuffix = ".NET 8.0";

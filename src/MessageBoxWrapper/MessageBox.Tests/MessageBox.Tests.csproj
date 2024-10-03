@@ -1,6 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
-        <TargetFrameworks>net481;net8.0-windows</TargetFrameworks>
+        <TargetFrameworks>net48;net8.0-windows</TargetFrameworks>
         <OutputType>Library</OutputType>
         <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
         <AssemblyName>Agilent.Ace.Testables.MessageBox.Tests</AssemblyName>
@@ -12,8 +12,8 @@
         <DefineConstants>NET8_0</DefineConstants>
     </PropertyGroup>
 
-    <PropertyGroup Condition=" '$(TargetFramework)' == 'net481'">
-        <DefineConstants>NET481</DefineConstants>
+    <PropertyGroup Condition=" '$(TargetFramework)' == 'net48'">
+        <DefineConstants>NET48</DefineConstants>
         <IsTestProject>true</IsTestProject>
     </PropertyGroup>
 
@@ -24,14 +24,18 @@
         <PackageReference Include="Snapshooter.MSTest" Version="0.14.1" />
         <PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" />
     </ItemGroup>
+
     <ItemGroup>
         <ProjectReference Include="..\MessageBox\MessageBox.csproj" />
     </ItemGroup>
-    <ItemGroup Condition=" '$(TargetFramework)' == 'net481'">
-        <Reference Include="System.Windows.Forms" />
-    </ItemGroup>
+
     <ItemGroup Condition=" '$(TargetFramework)' == 'net8.0-windows'">
         <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.11.1" />
+    </ItemGroup>
+
+    <ItemGroup Condition=" '$(TargetFramework)' == 'net48'">
+      <Reference Include="System.Windows" />
+      <Reference Include="PresentationFramework" />
     </ItemGroup>
 
 </Project>

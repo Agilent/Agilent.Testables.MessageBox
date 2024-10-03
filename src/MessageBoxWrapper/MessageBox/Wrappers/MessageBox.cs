@@ -1,152 +1,88 @@
 // (c) Copyright 2024 Agilent Technologies, Inc. All Rights Reserved.
 
-using System.Windows.Forms;
+using System.Windows;
 using Agilent.Ace.Testables.MessageBox.Abstractions;
+using MessageBoxOptions = System.Windows.MessageBoxOptions;
 
 namespace Agilent.Ace.Testables.MessageBox.Wrappers
 {
     public class MessageBox : IMessageBox
     {
         /// <inheritdoc />
-        public DialogResult Show(string text)
+        public MessageBoxResult Show(string messageBoxText)
         {
-            return System.Windows.Forms.MessageBox.Show(text);
+            return System.Windows.MessageBox.Show(messageBoxText);
         }
 
         /// <inheritdoc />
-        public DialogResult Show(IWin32Window owner, string text, string caption, MessageBoxButtons buttons, MessageBoxIcon icon,
-            MessageBoxDefaultButton defaultButton, MessageBoxOptions options, string helpFilePath, string keyword)
+        public MessageBoxResult Show(string messageBoxText, string caption)
         {
-            return System.Windows.Forms.MessageBox.Show(owner, text, caption, buttons, icon, defaultButton, options, helpFilePath, keyword);
+            return System.Windows.MessageBox.Show(messageBoxText, caption);
         }
 
         /// <inheritdoc />
-        public DialogResult Show(string text, string caption, MessageBoxButtons buttons, MessageBoxIcon icon,
-            MessageBoxDefaultButton defaultButton, MessageBoxOptions options, string helpFilePath, HelpNavigator navigator,
-            object param)
+        public MessageBoxResult Show(Window owner, string messageBoxText)
         {
-            return System.Windows.Forms.MessageBox.Show(text, caption, buttons, icon, defaultButton, options, helpFilePath, navigator, param);
+            return System.Windows.MessageBox.Show(owner, messageBoxText);
         }
 
         /// <inheritdoc />
-        public DialogResult Show(IWin32Window owner, string text, string caption, MessageBoxButtons buttons, MessageBoxIcon icon,
-            MessageBoxDefaultButton defaultButton, MessageBoxOptions options, string helpFilePath)
+        public MessageBoxResult Show(string messageBoxText, string caption, MessageBoxButton button)
         {
-            return System.Windows.Forms.MessageBox.Show(owner, text, caption, buttons, icon, defaultButton, options, helpFilePath);
+            return System.Windows.MessageBox.Show(messageBoxText, caption, button);
         }
 
         /// <inheritdoc />
-        public DialogResult Show(string text, string caption, MessageBoxButtons buttons, MessageBoxIcon icon,
-            MessageBoxDefaultButton defaultButton, MessageBoxOptions options, string helpFilePath, HelpNavigator navigator)
+        public MessageBoxResult Show(Window owner, string messageBoxText, string caption)
         {
-            return System.Windows.Forms.MessageBox.Show(text, caption, buttons, icon, defaultButton, options, helpFilePath, navigator);
+            return System.Windows.MessageBox.Show(owner, messageBoxText, caption);
         }
 
         /// <inheritdoc />
-        public DialogResult Show(string text, string caption, MessageBoxButtons buttons, MessageBoxIcon icon,
-            MessageBoxDefaultButton defaultButton, MessageBoxOptions options, string helpFilePath, string keyword)
+        public MessageBoxResult Show(string messageBoxText, string caption, MessageBoxButton button, MessageBoxImage icon)
         {
-            return System.Windows.Forms.MessageBox.Show(text, caption, buttons, icon, defaultButton, options, helpFilePath, keyword);
+            return System.Windows.MessageBox.Show(messageBoxText, caption, button, icon);
         }
 
         /// <inheritdoc />
-        public DialogResult Show(IWin32Window owner, string text, string caption, MessageBoxButtons buttons, MessageBoxIcon icon,
-            MessageBoxDefaultButton defaultButton, MessageBoxOptions options)
+        public MessageBoxResult Show(Window owner, string messageBoxText, string caption, MessageBoxButton button)
         {
-            return System.Windows.Forms.MessageBox.Show(owner, text, caption, buttons, icon, defaultButton, options);
+            return System.Windows.MessageBox.Show(owner, messageBoxText, caption, button);
         }
 
         /// <inheritdoc />
-        public DialogResult Show(string text, string caption, MessageBoxButtons buttons, MessageBoxIcon icon,
-            MessageBoxDefaultButton defaultButton, MessageBoxOptions options, string helpFilePath)
+        public MessageBoxResult Show(string messageBoxText, string caption, MessageBoxButton button, MessageBoxImage icon,
+            MessageBoxResult defaultResult)
         {
-            return System.Windows.Forms.MessageBox.Show(text, caption, buttons, icon, defaultButton, options, helpFilePath);
+            return System.Windows.MessageBox.Show(messageBoxText, caption, button, icon, defaultResult);
         }
 
         /// <inheritdoc />
-        public DialogResult Show(string text, string caption, MessageBoxButtons buttons, MessageBoxIcon icon,
-            MessageBoxDefaultButton defaultButton, MessageBoxOptions options, bool displayHelpButton)
+        public MessageBoxResult Show(Window owner, string messageBoxText, string caption, MessageBoxButton button,
+            MessageBoxImage icon)
         {
-            return System.Windows.Forms.MessageBox.Show(text, caption, buttons, icon, defaultButton, options, displayHelpButton);
+            return System.Windows.MessageBox.Show(owner, messageBoxText, caption, button, icon);
         }
 
         /// <inheritdoc />
-        public DialogResult Show(IWin32Window owner, string text, string caption, MessageBoxButtons buttons, MessageBoxIcon icon,
-            MessageBoxDefaultButton defaultButton, MessageBoxOptions options, string helpFilePath, HelpNavigator navigator)
+        public MessageBoxResult Show(string messageBoxText, string caption, MessageBoxButton button, MessageBoxImage icon,
+            MessageBoxResult defaultResult, MessageBoxOptions options)
         {
-            return System.Windows.Forms.MessageBox.Show(owner, text, caption, buttons, icon, defaultButton, options, helpFilePath, navigator);
+            return System.Windows.MessageBox.Show(messageBoxText, caption, button, icon, defaultResult, options);
         }
 
         /// <inheritdoc />
-        public DialogResult Show(IWin32Window owner, string text, string caption, MessageBoxButtons buttons, MessageBoxIcon icon,
-            MessageBoxDefaultButton defaultButton)
+        public MessageBoxResult Show(Window owner, string messageBoxText, string caption, MessageBoxButton button,
+            MessageBoxImage icon, MessageBoxResult defaultResult)
         {
-            return System.Windows.Forms.MessageBox.Show(owner, text, caption, buttons, icon, defaultButton);
+            return System.Windows.MessageBox.Show(owner, messageBoxText, caption, button, icon, defaultResult);
         }
 
         /// <inheritdoc />
-        public DialogResult Show(IWin32Window owner, string text, string caption, MessageBoxButtons buttons, MessageBoxIcon icon)
+        public MessageBoxResult Show(Window owner, string messageBoxText, string caption, MessageBoxButton button,
+            MessageBoxImage icon, MessageBoxResult defaultResult, MessageBoxOptions options)
         {
-            return System.Windows.Forms.MessageBox.Show(owner, text, caption, buttons, icon);
-        }
-
-        /// <inheritdoc />
-        public DialogResult Show(string text, string caption, MessageBoxButtons buttons, MessageBoxIcon icon,
-            MessageBoxDefaultButton defaultButton)
-        {
-            return System.Windows.Forms.MessageBox.Show(text, caption, buttons, icon, defaultButton);
-        }
-
-        /// <inheritdoc />
-        public DialogResult Show(IWin32Window owner, string text, string caption, MessageBoxButtons buttons)
-        {
-            return System.Windows.Forms.MessageBox.Show(owner, text, caption, buttons);
-        }
-
-        /// <inheritdoc />
-        public DialogResult Show(string text, string caption, MessageBoxButtons buttons, MessageBoxIcon icon)
-        {
-            return System.Windows.Forms.MessageBox.Show(text, caption, buttons, icon);
-        }
-
-        /// <inheritdoc />
-        public DialogResult Show(IWin32Window owner, string text, string caption)
-        {
-            return System.Windows.Forms.MessageBox.Show(owner, text, caption);
-        }
-
-        /// <inheritdoc />
-        public DialogResult Show(string text, string caption, MessageBoxButtons buttons)
-        {
-            return System.Windows.Forms.MessageBox.Show(text, caption, buttons);
-        }
-
-        /// <inheritdoc />
-        public DialogResult Show(IWin32Window owner, string text)
-        {
-            return System.Windows.Forms.MessageBox.Show(owner, text);
-        }
-
-        /// <inheritdoc />
-        public DialogResult Show(string text, string caption)
-        {
-            return System.Windows.Forms.MessageBox.Show(text, caption);
-        }
-
-        /// <inheritdoc />
-        public DialogResult Show(string text, string caption, MessageBoxButtons buttons, MessageBoxIcon icon,
-            MessageBoxDefaultButton defaultButton, MessageBoxOptions options)
-        {
-            return System.Windows.Forms.MessageBox.Show(text, caption, buttons, icon, defaultButton, options);
-        }
-
-        /// <inheritdoc />
-        public DialogResult Show(IWin32Window owner, string text, string caption, MessageBoxButtons buttons, MessageBoxIcon icon,
-            MessageBoxDefaultButton defaultButton, MessageBoxOptions options, string helpFilePath, HelpNavigator navigator,
-            object param)
-        {
-            return System.Windows.Forms.MessageBox.Show(owner, text, caption, buttons, icon, defaultButton, options,
-                helpFilePath, navigator, param);
+            return System.Windows.MessageBox.Show(owner, messageBoxText, caption, button, icon, defaultResult, options);
         }
     }
 }
