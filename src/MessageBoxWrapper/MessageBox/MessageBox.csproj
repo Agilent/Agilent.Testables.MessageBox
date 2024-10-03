@@ -10,6 +10,9 @@
         <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
         <PackageReleaseNotes>$([System.IO.File]::ReadAllText("$(MSBuildProjectDirectory)\..\release-notes.txt"))</PackageReleaseNotes>
         <PackageReadmeFile>README.md</PackageReadmeFile>
+        <Description>
+            This package contains an abstraction of the static System.Windows.MessageBox class found in .NET Framework 4.8 and .NET 8.0. It allows for an `IMessageBox` interface to be used instead and for mocks to be created.
+        </Description>
     </PropertyGroup>
     <PropertyGroup Condition=" '$(TargetFramework)' == 'net48'">
         <DefineConstants>NET48;NETFULL</DefineConstants>

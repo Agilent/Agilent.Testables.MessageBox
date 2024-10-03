@@ -1,10 +1,10 @@
 # Agilent.Ace.Testables.MessageBox
 
-This package contains an abstraction of the static `System.Windows.Forms.MessageBox` class found in .NET Framework 4.8.1 and .NET 8.0. It allows for an `IMessageBox` interface to be used instead and for mocks to be created.
+This package contains an abstraction of the static `System.Windows.MessageBox` class found in .NET Framework 4.8 and .NET 8.0. It allows for an `IMessageBox` interface to be used instead and for mocks to be created.
 
 ## Usage
 
-1. Pass `IMessageBox` as a dependency _via_ the ctor into the class you want to show a `MessageBox` from:
+1. Pass `IMessageBox` as a dependency _via_ the constructor into the class you want to show a `MessageBox` from:
 ```csharp
 public class TestableClass
 {
