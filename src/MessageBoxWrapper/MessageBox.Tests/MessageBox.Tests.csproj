@@ -23,6 +23,7 @@
         <PackageReference Include="MSTest.TestFramework" Version="3.6.0" />
         <PackageReference Include="Snapshooter.MSTest" Version="0.14.1" />
         <PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" />
+        <PackageReference Include="XunitXml.TestLogger" Version="4.0.254" />
     </ItemGroup>
 
     <ItemGroup>
