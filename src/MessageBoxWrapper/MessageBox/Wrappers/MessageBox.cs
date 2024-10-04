@@ -1,11 +1,13 @@
 // (c) Copyright 2024 Agilent Technologies, Inc. All Rights Reserved.
 
+using System.Diagnostics.CodeAnalysis;
 using System.Windows;
 using Agilent.Ace.Testables.MessageBox.Abstractions;
 using MessageBoxOptions = System.Windows.MessageBoxOptions;
 
 namespace Agilent.Ace.Testables.MessageBox.Wrappers
 {
+    [ExcludeFromCodeCoverage]
     public class MessageBox : IMessageBox
     {
         /// <inheritdoc />
