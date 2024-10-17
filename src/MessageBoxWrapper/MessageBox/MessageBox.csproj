@@ -3,8 +3,8 @@
     <PropertyGroup>
         <TargetFrameworks>net48;net8.0-windows</TargetFrameworks>
         <OutputType>Library</OutputType>
-        <RootNamespace>Agilent.Ace.Testables.MessageBox</RootNamespace>
-        <AssemblyName>Agilent.Ace.Testables.MessageBox</AssemblyName>
+        <RootNamespace>Agilent.Testables.MessageBox</RootNamespace>
+        <AssemblyName>Agilent.Testables.MessageBox</AssemblyName>
         <UseWindowsForms>true</UseWindowsForms>
         <UseWPF>true</UseWPF>
         <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>

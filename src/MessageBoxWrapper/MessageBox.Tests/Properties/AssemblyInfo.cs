@@ -1,5 +1,3 @@
-// (c) Copyright 2024 Agilent Technologies, Inc. All Rights Reserved.
-
 using System.Reflection;
 using System.Runtime.InteropServices;
 
@@ -11,7 +9,6 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("MessageBox.Tests")]
-[assembly: AssemblyCopyright("Copyright ©  2024")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

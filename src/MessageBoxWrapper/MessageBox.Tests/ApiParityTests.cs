@@ -1,5 +1,3 @@
-// (c) Copyright 2024 Agilent Technologies, Inc. All Rights Reserved.
-
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
@@ -9,7 +7,7 @@ using Snapshooter;
 using Snapshooter.MSTest;
 using static System.Reflection.BindingFlags;
 
-namespace Agilent.Ace.Testables.MessageBox.Tests
+namespace Agilent.Testables.MessageBox.Tests
 {
     [TestClass]
     [ExcludeFromCodeCoverage]
@@ -21,7 +19,7 @@ namespace Agilent.Ace.Testables.MessageBox.Tests
         {
             AssertParity(
                 referenceType: typeof(System.Windows.MessageBox),
-                abstractionType: typeof(Agilent.Ace.Testables.MessageBox.Wrappers.MessageBox)
+                abstractionType: typeof(Wrappers.MessageBox)
             );
         }
 

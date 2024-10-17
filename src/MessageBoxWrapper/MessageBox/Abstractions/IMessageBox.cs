@@ -1,8 +1,6 @@
-// (c) Copyright 2024 Agilent Technologies, Inc. All Rights Reserved.
-
 using System.Windows;
 
-namespace Agilent.Ace.Testables.MessageBox.Abstractions
+namespace Agilent.Testables.MessageBox.Abstractions
 {
     /// <summary>
     /// Abstractions for <see cref="System.Windows.MessageBox"/>

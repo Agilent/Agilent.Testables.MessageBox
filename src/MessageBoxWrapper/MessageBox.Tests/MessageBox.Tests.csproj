@@ -3,8 +3,8 @@
         <TargetFrameworks>net48;net8.0-windows</TargetFrameworks>
         <OutputType>Library</OutputType>
         <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
-        <AssemblyName>Agilent.Ace.Testables.MessageBox.Tests</AssemblyName>
-        <RootNamespace>Agilent.Ace.Testables.MessageBox.Tests</RootNamespace>
+        <AssemblyName>Agilent.Testables.MessageBox.Tests</AssemblyName>
+        <RootNamespace>Agilent.Testables.MessageBox.Tests</RootNamespace>
         <IsPackable>false</IsPackable>
     </PropertyGroup>
 
