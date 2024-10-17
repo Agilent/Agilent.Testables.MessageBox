@@ -1,4 +1,4 @@
-# Agilent.Ace.Testables.MessageBox
+# Agilent.Testables.MessageBox
 
 This package contains an abstraction of the static `System.Windows.MessageBox` class found in .NET Framework 4.8 and .NET 8.0. It allows for an `IMessageBox` interface to be used instead and for mocks to be created.
 
@@ -21,7 +21,7 @@ public class TestableClass
     }
 }
 ```
-2. In your IOC Container register `IMessageBox` and `Agilent.Ace.Testables.MessageBox`:
+2. In your IOC Container register `IMessageBox` and `Agilent.Testables.MessageBox`:
 ```csharp
 _services.AddTransient<IMessageBox, MessageBox>();
 ```
