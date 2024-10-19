@@ -6,13 +6,16 @@ jobs:
         timeout-minutes: 15
         steps:
             - uses: actions/checkout@v4
+              with:
+                fetch-depth: 0
             - name: Build
-              run: dotnet build
+              run: |
+                dotnet tool restore
+                dotnet build
             - name: Test
               run: dotnet test --no-build
             - name: Package
               run: |
-                dotnet tool restore
                 $version = dotnet nbgv Get-Version -f json | ConvertFrom-Json
                 dotnet pack /p:Version="$($version)-dev" --no-build
             - name: Archive
