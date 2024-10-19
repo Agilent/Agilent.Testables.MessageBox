@@ -1,0 +1,22 @@
+name: Pre-release Package
+on: workflow_dispatch
+jobs:
+    build:
+        runs-on: windows-latest
+        timeout-minutes: 15
+        steps:
+            - uses: actions/checkout@v4
+            - name: Build
+              run: dotnet build
+            - name: Test
+              run: dotnet test --no-build
+            - name: Package
+              run: |
+                dotnet tool restore
+                $version = dotnet nbgv Get-Version -f json | ConvertFrom-Json
+                dotnet pack /p:Version="$($version)-dev" --no-build
+            - name: Archive
+              uses: actions/upload-artifact@v4
+              with:
+                name: package
+                path: **/*.nupkg
