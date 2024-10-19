@@ -16,7 +16,7 @@ jobs:
             - name: Test
               run: dotnet test --no-build
             - name: Package
-              run: dotnet pack /p:Version="$MajorMinorVersion-dev" --no-build
+              run: dotnet pack --configuration debug /p:Version="$($NBGV_NuGetPackageVersion)-dev" --no-build
             - name: Archive
               uses: actions/upload-artifact@v4
               with:
