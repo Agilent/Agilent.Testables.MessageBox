@@ -1,47 +1,55 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-    <PropertyGroup>
-        <TargetFrameworks>net48;net8.0-windows</TargetFrameworks>
-        <OutputType>Library</OutputType>
-        <RootNamespace>Agilent.Testables.MessageBox</RootNamespace>
-        <AssemblyName>Agilent.Testables.MessageBox</AssemblyName>
-        <UseWindowsForms>true</UseWindowsForms>
-        <UseWPF>true</UseWPF>
-        <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
-        <PackageReleaseNotes>$([System.IO.File]::ReadAllText("$(MSBuildProjectDirectory)\..\release-notes.txt"))</PackageReleaseNotes>
-        <PackageReadmeFile>README.md</PackageReadmeFile>
-        <Description>
-            This package contains an abstraction of the static System.Windows.MessageBox class found in .NET Framework 4.8 and .NET 8.0. It allows for an IMessageBox interface to be used instead for easier testing.
-        </Description>
-    </PropertyGroup>
+  <PropertyGroup>
+    <TargetFrameworks>net48;net8.0-windows</TargetFrameworks>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Agilent.Testables.MessageBox</RootNamespace>
+    <AssemblyName>Agilent.Testables.MessageBox</AssemblyName>
+    <UseWindowsForms>true</UseWindowsForms>
+    <UseWPF>true</UseWPF>
+    <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
+    <Authors>Agilent</Authors>
+    <PackageReleaseNotes>$([System.IO.File]::ReadAllText("$(MSBuildProjectDirectory)\..\release-notes.txt"))</PackageReleaseNotes>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <Description>
+      This package contains an abstraction of the static System.Windows.MessageBox class found in .NET Framework 4.8 and .NET 8.0. It allows for an IMessageBox interface to be used instead for easier testing.
+    </Description>
+    <PackageProjectUrl>https://github.com/Agilent/Agilent.Testables.MessageBox</PackageProjectUrl>
+    <PackageIcon>icon.png</PackageIcon>
+    <RepositoryUrl>https://github.com/Agilent/Agilent.Testables.MessageBox</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>messagebox, imessagebox, testing,ioc, dependency injection, agilent</PackageTags>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+  </PropertyGroup>
 
-    <PropertyGroup Condition=" '$(TargetFramework)' == 'net48'">
-        <DefineConstants>NET48;NETFULL</DefineConstants>
-    </PropertyGroup>
+  <PropertyGroup Condition=" '$(TargetFramework)' == 'net48'">
+    <DefineConstants>NET48;NETFULL</DefineConstants>
+  </PropertyGroup>
 
-    <PropertyGroup Condition=" '$(TargetFramework)' == 'net8.0-windows'">
-        <DefineConstants>NET8_0</DefineConstants>
-    </PropertyGroup>
+  <PropertyGroup Condition=" '$(TargetFramework)' == 'net8.0-windows'">
+    <DefineConstants>NET8_0</DefineConstants>
+  </PropertyGroup>
 
-    <ItemGroup>
-      <None Include="..\README.md" Pack="true" PackagePath=""/>
-    </ItemGroup>
+  <ItemGroup>
+    <None Include="..\README.md" Pack="true" PackagePath=""/>
+    <None Include="..\images\icon.png" Pack="true" PackagePath="\"/>
+  </ItemGroup>
 
-    <ItemGroup>
-        <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="4.11.0" PrivateAssets="All" />
-        <PackageReference Include="Microsoft.CodeAnalysis.NetAnalyzers" Version="8.0.0" PrivateAssets="All">
-            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-        </PackageReference>
-        <PackageReference Include="Microsoft.CSharp" Version="4.7.0" PrivateAssets="All" />
-        <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.3" PrivateAssets="All">
-            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-        </PackageReference>
-    </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="4.11.0" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.CodeAnalysis.NetAnalyzers" Version="8.0.0" PrivateAssets="All">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.CSharp" Version="4.7.0" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.3" PrivateAssets="All">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
 
-    <ItemGroup>
-        <SonarQubeSetting Include="sonar.coverage.exclusions">
-            <Value>**/Wrappers/MessageBox.cs</Value>
-        </SonarQubeSetting>
-    </ItemGroup>
+  <ItemGroup>
+    <SonarQubeSetting Include="sonar.coverage.exclusions">
+      <Value>**/Wrappers/MessageBox.cs</Value>
+    </SonarQubeSetting>
+  </ItemGroup>
 
 </Project>
